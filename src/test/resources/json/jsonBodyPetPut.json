@@ -1,0 +1,18 @@
+{
+  "id": 48752135,
+  "category": {
+    "id": 2,
+    "name": "Gato"
+  },
+  "name": "Bichento",
+  "photoUrls": [
+    "https://reveliopotter.files.wordpress.com/2020/10/40ec8ed76c24878b8596eee253403ef4.jpg"
+  ],
+  "tags": [
+    {
+      "id": 15,
+      "name": "Persa"
+    }
+  ],
+  "status": "sold"
+}
