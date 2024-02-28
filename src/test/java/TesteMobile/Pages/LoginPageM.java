@@ -4,10 +4,10 @@ import io.appium.java_client.AppiumBy;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-public class LoginPage extends Base {
+public class LoginPageM extends Base {
 
 
-    public LoginPage(WebDriver driver) {
+    public LoginPageM(WebDriver driver) {
         super(driver);
     }
 

@@ -4,9 +4,9 @@ import io.appium.java_client.AppiumBy;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.By;
 
-public class FirstPage extends Base {
+public class FirstPageM extends Base {
 
-    public FirstPage(WebDriver driver) {
+    public FirstPageM(WebDriver driver) {
         super(driver);
     }
 

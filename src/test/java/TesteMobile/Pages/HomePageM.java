@@ -4,8 +4,8 @@ import io.appium.java_client.AppiumBy;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-public class HomePage extends Base{
-    public HomePage(WebDriver driver) {
+public class HomePageM extends Base{
+    public HomePageM(WebDriver driver) {
         super(driver);
     }
 
