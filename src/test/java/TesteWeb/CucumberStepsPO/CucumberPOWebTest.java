@@ -67,7 +67,10 @@ public class CucumberPOWebTest {
         productPage.sendKeysCampoCEP();
         productPage.clickBtnConfirmaCEP();
 
-        wait.until(ExpectedConditions.visibilityOfElementLocated(productPage.byElementoCalendario));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(productPage.bySelecionaProximoMes));
+        productPage.clickSelecionaProximoMes();
+
+        wait.until(ExpectedConditions.visibilityOfElementLocated(productPage.byBtnSelecionaData));
         productPage.clickBtnSelecionaData();
         productPage.clickBtnConfirmaData();
         wait.until(ExpectedConditions.visibilityOfElementLocated(productPage.byBtnComprar));
@@ -99,8 +102,11 @@ public class CucumberPOWebTest {
     @And("realiza o mesmo processo")
     public void realiza_o_mesmo_processo() {
         productPage.clickBtnConfirmaCEP();
-        wait.until(ExpectedConditions.visibilityOfElementLocated(productPage.byElementoCalendario));
 
+        wait.until(ExpectedConditions.visibilityOfElementLocated(productPage.bySelecionaProximoMes));
+        productPage.clickSelecionaProximoMes();
+
+        wait.until(ExpectedConditions.visibilityOfElementLocated(productPage.byBtnSelecionaData));
         productPage.clickBtnSelecionaData();
         productPage.clickBtnConfirmaData();
         wait.until(ExpectedConditions.visibilityOfElementLocated(productPage.byBtnComprar));

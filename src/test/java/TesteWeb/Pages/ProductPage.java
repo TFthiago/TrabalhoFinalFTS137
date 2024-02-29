@@ -31,8 +31,6 @@ public class ProductPage extends Base {
         this.driver.findElement(byBtnConfirmaCEP).click();
     }
 
-    public By byElementoCalendario = By.cssSelector("[class = \"jSelectedMonth\"]");
-
     public By bySelecionaProximoMes = By.cssSelector("div [class = 'bt_Month jNextMonth']");
     public void clickSelecionaProximoMes(){
         this.driver.findElement(bySelecionaProximoMes).click();
