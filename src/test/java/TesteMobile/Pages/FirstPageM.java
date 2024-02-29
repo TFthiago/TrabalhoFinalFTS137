@@ -20,9 +20,14 @@ public class FirstPageM extends Base {
         this.driver.findElement(byBtnPularAnuncio).click();
     }
 
+    public By byBtnNegarAtualizacao = AppiumBy.id("android:id/button2");
+    public void clickBtnNegarAtualizacao(){
+        this.driver.findElement(byBtnNegarAtualizacao).click();
+    }
+
     public By byBtnEntrarAplicativo = AppiumBy.xpath("//android.widget.TextView[@text=\"Entrar\"]");
     public void clickBtnEntrarAplicativo(){
-        this.driver.findElement(byBtnEntrarAplicativo);
+        this.driver.findElement(byBtnEntrarAplicativo).click();
     }
 
 }

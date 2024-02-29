@@ -10,12 +10,22 @@ public class CartPage extends Base {
 
     public By byPopupCookies = By.cssSelector("[class = \"adopt-c-bXGRNs\"]");
 
-    public By byProductName2 = By.cssSelector("span[class = \"prodBasket_nome\"]");
-    public String readProductName2(){
+    public By byProductName1 = By.cssSelector("span[class = \"prodBasket_nome\"]");
+    public String readProductName1(){
+        return driver.findElement(byProductName1).getText();
+    }
+
+    public By byProductPrice1 = By.cssSelector("span[class = \"precoPor_basket\"");
+    public String readProductPrice1(){
+        return driver.findElement(byProductPrice1).getText();
+    }
+
+    public By byProductName2 = By.xpath("//*[@id=\"ContentSite_Basketcontrol1_idUpdatePanel\"]/div[2]/div[2]/ul[2]/li/div[2]/span[1]");
+    public String readProductName2() {
         return driver.findElement(byProductName2).getText();
     }
 
-    public By byProductPrice2 = By.cssSelector("[class = \"valor-total-carrinho\"]");
+    public By byProductPrice2 = By.xpath("//*[@id=\"ContentSite_Basketcontrol1_idUpdatePanel\"]/div[2]/div[2]/ul[2]/li/div[4]/span[2]");
     public String readProductPrice2(){
         return driver.findElement(byProductPrice2).getText();
     }

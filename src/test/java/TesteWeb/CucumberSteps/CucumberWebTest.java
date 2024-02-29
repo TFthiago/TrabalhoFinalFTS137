@@ -63,8 +63,9 @@ public class CucumberWebTest {
 
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("[class = \"adopt-c-bXGRNs\"]")));
         assertEquals("Orquídea Mine Rara Rosa", driver.findElement(By.cssSelector("span[class = \"prodBasket_nome\"]")).getText());
-        assertEquals("R$ 182,90", driver.findElement(By.cssSelector("[class = \"valor-total-carrinho\"]")).getText());
-
+        assertEquals("R$ 182,90", driver.findElement(By.cssSelector("span[class = \"precoPor_basket\"]")).getText());
+         //span[class = "precoPor_basket"]
+        //"[class = \"valor-total-carrinho\"]"
     }
     @And("depois por {string}")
     public void e_depois_por(String margarida) {
@@ -85,10 +86,15 @@ public class CucumberWebTest {
         driver.findElement(By.cssSelector("[class = \"btn_okcep jOpenShippingPopup\"]")).click();
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("[class = \"jSelectedMonth\"]")));
 
+        driver.findElement(By.cssSelector("div [class = 'bt_Month jNextMonth']")).click();
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("li input.jPeriodRadio")));
         driver.findElement(By.cssSelector("li input.jPeriodRadio")).click();
         driver.findElement(By.cssSelector("div [class = \"btOk jConfirmShippingData\"]")).click();
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("div.bt_comprar")));
         driver.findElement(By.cssSelector("div.bt_comprar")).click();
+
+        assertEquals("Buquê Magnificas Margaridas Amarelas",driver.findElement(By.xpath("//*[@id=\"ContentSite_Basketcontrol1_idUpdatePanel\"]/div[2]/div[2]/ul[2]/li/div[2]/span[1]")).getText());
+        assertEquals("R$ 69,90", driver.findElement(By.xpath("//*[@id=\"ContentSite_Basketcontrol1_idUpdatePanel\"]/div[2]/div[2]/ul[2]/li/div[4]/span[2]")).getText());
 
     }
     @Then("ele consegue adicionar ambos os itens ao carrinho de forma separada")

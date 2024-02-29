@@ -26,7 +26,7 @@ public class LoginPageM extends Base {
         this.driver.findElement(byBtnEntrar).click();
     }
 
-    public By byBtnNegarPermissao = AppiumBy.xpath("com.android.permissioncontroller:id/permission_deny_button");
+    public By byBtnNegarPermissao = AppiumBy.id("com.android.permissioncontroller:id/permission_deny_button");
     public void clickBtnNegarPermissao(){
         this.driver.findElement(byBtnNegarPermissao).click();
     }

@@ -31,7 +31,7 @@ public class CucumberPOWebTest {
     public void setup(){
         driver = new ChromeDriver();
         driver.manage().window().maximize();
-        wait = new WebDriverWait(driver, Duration.ofMillis(5000));
+        wait = new WebDriverWait(driver, Duration.ofMillis(15000));
         System.setProperty("webdriver.chrome.driver", "Driver/Chrome/chromedriver.exe");
 
         homePage = new HomePage(driver);
@@ -75,9 +75,9 @@ public class CucumberPOWebTest {
 
         wait.until(ExpectedConditions.visibilityOfElementLocated(cartPage.byPopupCookies));
         assertEquals("Orquídea Mine Rara Rosa",
-                cartPage.readProductName2());
+                cartPage.readProductName1());
         assertEquals("R$ 182,90",
-                cartPage.readProductPrice2());
+                cartPage.readProductPrice1());
 
     }
     @And("depois por {string}")
@@ -105,6 +105,12 @@ public class CucumberPOWebTest {
         productPage.clickBtnConfirmaData();
         wait.until(ExpectedConditions.visibilityOfElementLocated(productPage.byBtnComprar));
         productPage.clickBtnComprar();
+
+        wait.until(ExpectedConditions.visibilityOfElementLocated(cartPage.byPopupCookies));
+        assertEquals("Buquê Magnificas Margaridas Amarelas",
+                cartPage.readProductName2());
+        assertEquals("R$ 69,90",
+                cartPage.readProductPrice2());
 
     }
     @Then("ele consegue adicionar ambos os itens ao carrinho de forma separada")

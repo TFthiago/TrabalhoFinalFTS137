@@ -63,6 +63,10 @@ public class GiulianaFloresAppPOTest {
 
     firstPageM.clickBtnFecharMensagem();
     firstPageM.clickBtnPularAnuncio();
+
+    wait.until(ExpectedConditions.visibilityOfElementLocated(firstPageM.byBtnNegarAtualizacao));
+
+    firstPageM.clickBtnNegarAtualizacao();
     firstPageM.clickBtnEntrarAplicativo();
 
     wait.until(ExpectedConditions.elementToBeClickable(loginPageM.byCampoEmail));

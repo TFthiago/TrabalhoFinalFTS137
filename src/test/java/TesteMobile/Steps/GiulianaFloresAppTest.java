@@ -56,6 +56,11 @@ public class GiulianaFloresAppTest {
         btnFecharMensagem.click();
         var btnPularAnuncio = driver.findElement(AppiumBy.xpath("//android.widget.TextView[@text=\"Pular\"]"));
         btnPularAnuncio.click();
+
+        wait.until(ExpectedConditions.visibilityOfElementLocated(AppiumBy.id("android:id/button2")));
+
+        var btnNegarAtualizacao = driver.findElement(AppiumBy.id("android:id/button2"));
+        btnNegarAtualizacao.click();
         var btnEntrarAplicativo = driver.findElement(AppiumBy.xpath("//android.widget.TextView[@text=\"Entrar\"]"));
         btnEntrarAplicativo.click();
 

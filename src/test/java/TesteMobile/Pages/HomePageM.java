@@ -19,12 +19,13 @@ public class HomePageM extends Base{
         this.driver.findElement(byBtnBuscarEndereco).click();
     }
 
-    public By byCampoBuscaEndereco = AppiumBy.xpath("android.widget.EditText");
+    public By byCampoBuscaEndereco = AppiumBy.className("android.widget.EditText");
     public void clickCampoBuscaEndereco(){
         this.driver.findElement(byCampoBuscaEndereco).click();
     }
+    public By byCampoBuscaEndereco2 = AppiumBy.className("android.widget.EditText");
     public void senKeysEndereco(){
-        this.driver.findElement(byCampoBuscaEndereco).sendKeys("57010003");
+        this.driver.findElement(byCampoBuscaEndereco2).sendKeys("57010003");
     }
 
     public By byCampoEndereco = AppiumBy.xpath("//android.widget.TextView[@text=\"Avenida Siqueira Campos, Prado, Maceió - AL, 57010003, Brasil\"]");
@@ -47,12 +48,12 @@ public class HomePageM extends Base{
         this.driver.findElement(byBtnSalvarEndereco).click();
     }
 
-    public By byBtnOkMensagem = AppiumBy.xpath("android:id/button1");
+    public By byBtnOkMensagem = AppiumBy.id("android:id/button1");
     public void clickBtnOkMensagem(){
         this.driver.findElement(byBtnOkMensagem).click();
     }
 
-    public By byCampoBuscaProduto = AppiumBy.xpath("android.widget.EditText");
+    public By byCampoBuscaProduto = AppiumBy.className("android.widget.EditText");
     public void sendKeysProduto(){
         this.driver.findElement(byCampoBuscaProduto).sendKeys("Ramalhete com Dois Girassóis");
     }

@@ -33,6 +33,11 @@ public class ProductPage extends Base {
 
     public By byElementoCalendario = By.cssSelector("[class = \"jSelectedMonth\"]");
 
+    public By bySelecionaProximoMes = By.cssSelector("div [class = 'bt_Month jNextMonth']");
+    public void clickSelecionaProximoMes(){
+        this.driver.findElement(bySelecionaProximoMes).click();
+    }
+
     public By byBtnSelecionaData = By.cssSelector("li input.jPeriodRadio");
     public void clickBtnSelecionaData(){
         this.driver.findElement(byBtnSelecionaData).click();
