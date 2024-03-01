@@ -45,8 +45,10 @@ public class CucumberWebTest {
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".autocomplete_completionListElement")));
         driver.findElement(By.cssSelector(".autocomplete_completionListElement")).click();
 
-        assertEquals("ORQUÍDEA MINE RARA ROSA", driver.findElement(By.cssSelector("h1 span")).getText());
-        assertEquals("R$ 182,90", driver.findElement(By.cssSelector("span.precoPor_prod")).getText());
+        assertEquals("ORQUÍDEA MINE RARA ROSA",
+                driver.findElement(By.cssSelector("h1 span")).getText());
+        assertEquals("R$ 182,90",
+                driver.findElement(By.cssSelector("span.precoPor_prod")).getText());
 
     }
     @And("adiciona o produto ao carrinho")
@@ -64,7 +66,6 @@ public class CucumberWebTest {
         driver.findElement(By.cssSelector("div.bt_comprar")).click();
 
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("span[class = \"prodBasket_nome\"]")));
-        //"[class = \"adopt-c-bXGRNs\"]"
         assertEquals("Orquídea Mine Rara Rosa",
                 driver.findElement(By.cssSelector("span[class = \"prodBasket_nome\"]")).getText());
         assertEquals("R$ 182,90",
@@ -81,8 +82,10 @@ public class CucumberWebTest {
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".autocomplete_completionListElement")));
         driver.findElement(By.cssSelector(".autocomplete_completionListElement")).click();
 
-        assertEquals("BUQUÊ MAGNIFICAS MARGARIDAS AMARELAS", driver.findElement(By.cssSelector("h1 span")).getText());
-        assertEquals("R$ 69,90", driver.findElement(By.cssSelector("span.precoPor_prod")).getText());
+        assertEquals("BUQUÊ MAGNIFICAS MARGARIDAS AMARELAS",
+                driver.findElement(By.cssSelector("h1 span")).getText());
+        assertEquals("R$ 69,90",
+                driver.findElement(By.cssSelector("span.precoPor_prod")).getText());
 
     }
     @And("realiza o mesmo processo")
