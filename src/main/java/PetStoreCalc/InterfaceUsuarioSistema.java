@@ -27,7 +27,7 @@ public class InterfaceUsuarioSistema {
         double peso = teclado.nextDouble();
         while (peso <= 0 || peso > 100) {
             if (peso <= 0) {
-                System.out.println("Por favor digite um valor positivo");
+                System.out.println("Por favor digite um valor maior do que zero");
             } else {
                 System.out.println("O valor não deve exceder os 100kg");
             }

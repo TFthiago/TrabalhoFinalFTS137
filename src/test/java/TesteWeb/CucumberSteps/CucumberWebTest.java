@@ -60,12 +60,15 @@ public class CucumberWebTest {
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("li input.jPeriodRadio")));
         driver.findElement(By.cssSelector("li input.jPeriodRadio")).click();
         driver.findElement(By.cssSelector("div [class = \"btOk jConfirmShippingData\"]")).click();
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("div.bt_comprar")));
+        wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("div.bt_comprar")));
         driver.findElement(By.cssSelector("div.bt_comprar")).click();
 
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("[class = \"adopt-c-bXGRNs\"]")));
-        assertEquals("Orquídea Mine Rara Rosa", driver.findElement(By.cssSelector("span[class = \"prodBasket_nome\"]")).getText());
-        assertEquals("R$ 182,90", driver.findElement(By.cssSelector("span[class = \"precoPor_basket\"]")).getText());
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("span[class = \"prodBasket_nome\"]")));
+        //"[class = \"adopt-c-bXGRNs\"]"
+        assertEquals("Orquídea Mine Rara Rosa",
+                driver.findElement(By.cssSelector("span[class = \"prodBasket_nome\"]")).getText());
+        assertEquals("R$ 182,90",
+                driver.findElement(By.cssSelector("span[class = \"precoPor_basket\"]")).getText());
 
     }
     @And("depois por {string}")
@@ -96,8 +99,10 @@ public class CucumberWebTest {
 
         //Como os elementos correspondentes aos preços e nomes são identicos, ao realizar o teste com 2 produtos tive que optar pelo xpath
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("[class = \"adopt-c-bXGRNs\"]")));
-        assertEquals("Buquê Magnificas Margaridas Amarelas",driver.findElement(By.xpath("//*[@id=\"ContentSite_Basketcontrol1_idUpdatePanel\"]/div[2]/div[2]/ul[2]/li/div[2]/span[1]")).getText());
-        assertEquals("R$ 69,90", driver.findElement(By.xpath("//*[@id=\"ContentSite_Basketcontrol1_idUpdatePanel\"]/div[2]/div[2]/ul[2]/li/div[4]/span[2]")).getText());
+        assertEquals("Buquê Magnificas Margaridas Amarelas",
+                driver.findElement(By.xpath("//*[@id=\"ContentSite_Basketcontrol1_idUpdatePanel\"]/div[2]/div[2]/ul[2]/li/div[2]/span[1]")).getText());
+        assertEquals("R$ 69,90",
+                driver.findElement(By.xpath("//*[@id=\"ContentSite_Basketcontrol1_idUpdatePanel\"]/div[2]/div[2]/ul[2]/li/div[4]/span[2]")).getText());
 
     }
     @Then("ele consegue adicionar ambos os itens ao carrinho de forma separada")
@@ -109,6 +114,17 @@ public class CucumberWebTest {
                 driver.findElement(By.xpath("//*[@id=\"ContentSite_Basketcontrol1_rptBasket_ulVlTotalOrder_1\"]/div[1]/span[1]")).getText());
         assertEquals("R$ 353,54",
                 driver.findElement(By.xpath("//*[@id=\"ContentSite_Basketcontrol1_rptBasket_ulVlTotalOrder_1\"]/div[1]/span[2]")).getText());
+
+        assertEquals("Orquídea Mine Rara Rosa",
+                driver.findElement(By.cssSelector("span[class = \"prodBasket_nome\"]")).getText());
+        assertEquals("R$ 182,90",
+                driver.findElement(By.cssSelector("span[class = \"precoPor_basket\"]")).getText());
+
+        assertEquals("Buquê Magnificas Margaridas Amarelas",
+                driver.findElement(By.xpath("//*[@id=\"ContentSite_Basketcontrol1_idUpdatePanel\"]/div[2]/div[2]/ul[2]/li/div[2]/span[1]")).getText());
+        assertEquals("R$ 69,90",
+                driver.findElement(By.xpath("//*[@id=\"ContentSite_Basketcontrol1_idUpdatePanel\"]/div[2]/div[2]/ul[2]/li/div[4]/span[2]")).getText());
     }
+
 
 }

@@ -1,7 +1,6 @@
-package TesteMobile.POSteps;
+package TesteMobile.StepsPO;
 
 import TesteMobile.Pages.*;
-import TesteWeb.Pages.CartPage;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.remote.options.BaseOptions;
 import org.junit.jupiter.api.AfterEach;
@@ -74,6 +73,8 @@ public class GiulianaFloresAppPOTest {
     loginPageM.sendKeysEmail();
     loginPageM.sendKeysSenha();
     loginPageM.clickBtnEntrar();
+
+    wait.until(ExpectedConditions.visibilityOfElementLocated(loginPageM.byBtnNegarPermissao));
     loginPageM.clickBtnNegarPermissao();
 
     wait.until(ExpectedConditions.visibilityOfElementLocated(homePageM.byBtnNegarAvaliacao));

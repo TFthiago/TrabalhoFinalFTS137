@@ -73,10 +73,10 @@ public class CucumberPOWebTest {
         wait.until(ExpectedConditions.visibilityOfElementLocated(productPage.byBtnSelecionaData));
         productPage.clickBtnSelecionaData();
         productPage.clickBtnConfirmaData();
-        wait.until(ExpectedConditions.visibilityOfElementLocated(productPage.byBtnComprar));
+        wait.until(ExpectedConditions.elementToBeClickable(productPage.byBtnComprar));
         productPage.clickBtnComprar();
 
-        wait.until(ExpectedConditions.visibilityOfElementLocated(cartPage.byPopupCookies));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(cartPage.byProductName1));
         assertEquals("Orquídea Mine Rara Rosa",
                 cartPage.readProductName1());
         assertEquals("R$ 182,90",
@@ -127,5 +127,14 @@ public class CucumberPOWebTest {
         assertEquals("R$ 353,54",
                 cartPage.readValorTotal());
 
+        assertEquals("Orquídea Mine Rara Rosa",
+                cartPage.readProductName1());
+        assertEquals("R$ 182,90",
+                cartPage.readProductPrice1());
+
+        assertEquals("Buquê Magnificas Margaridas Amarelas",
+                cartPage.readProductName2());
+        assertEquals("R$ 69,90",
+                cartPage.readProductPrice2());
     }
 }

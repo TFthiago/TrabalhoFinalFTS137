@@ -72,6 +72,8 @@ public class GiulianaFloresAppTest {
         campoSenha.sendKeys("Tf121416@");
         var btnEntrar = driver.findElement(AppiumBy.xpath("//android.widget.TextView[@text=\"Entrar\"]"));
         btnEntrar.click();
+
+        wait.until(ExpectedConditions.visibilityOfElementLocated(AppiumBy.id("com.android.permissioncontroller:id/permission_deny_button")));
         var btnNegarPermissao = driver.findElement(AppiumBy.id("com.android.permissioncontroller:id/permission_deny_button"));
         btnNegarPermissao.click();
 
