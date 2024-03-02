@@ -56,7 +56,7 @@ public class WebTest {
         driver.findElement(By.cssSelector("div.bt_comprar")).click();
 
         //Segunda validação
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("[class = \"adopt-c-bXGRNs\"]")));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("div [class = \"prodBasket_nome\"]")));
         assertEquals("Orquídea Mine Rara Rosa", driver.findElement(By.cssSelector("div [class = \"prodBasket_nome\"]")).getText());
         assertEquals("R$ 182,90", driver.findElement(By.cssSelector("div [class = \"precoPor_basket\"]")).getText());
     }
