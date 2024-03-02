@@ -14,7 +14,7 @@ import java.time.Duration;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 
-public class SimpleScriptTest {
+public class WebTest {
 
     public WebDriver driver;
     public WebDriverWait wait;
@@ -33,7 +33,7 @@ public class SimpleScriptTest {
     }
 
     @Test
-    public void scriptSimplesWebTest(){
+    public void giulianaFloresWebTest(){
         //Acessar URL
         driver.get(url);
 
