@@ -130,8 +130,6 @@ public class GiulianaFloresAppTest {
 
         wait.until(ExpectedConditions.elementToBeClickable(AppiumBy.xpath("//android.widget.TextView[@text=\"27\"]")));
 
-        //var el21 = driver.findElement(AppiumBy.xpath("//android.widget.TextView[@text=\"27\"]"));
-        //el21.click();
         var btnContinuar2 = driver.findElement(AppiumBy.xpath("//android.widget.TextView[@text=\"CONTINUAR\"]"));
         btnContinuar2.click();
 

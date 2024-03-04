@@ -1,6 +1,7 @@
 package TesteDeUnidade;
 
 import PetStoreCalc.CalculadoraRacao;
+import org.checkerframework.checker.units.qual.C;
 import org.junit.jupiter.api.*;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvFileSource;
@@ -81,9 +82,22 @@ public class CalculoRacaoTest {
                 CalculadoraRacao.calcular_racao_cao("G", 101));
 
     }
+    @Test
+    @Order(9)
+    public void testeNegativoPorteNaoSuportado(){
+        assertEquals("Por favor digite um tamanho suportado: P, M ou G",
+                CalculadoraRacao.calcular_racao_cao("F", 15));
+    }
+    @Test
+    @Order(10)
+    public void testeNegativoPorteNaoCorresponde(){
+        assertEquals("Peso não corresponde ao porte informado",
+                CalculadoraRacao.calcular_racao_cao("M", 10));
+    }
+
 
     //Testes negativos com lista
-    @Order(9)
+    @Order(11)
     @ParameterizedTest
     @CsvSource(value = {
             "P,-0.40",
@@ -97,7 +111,7 @@ public class CalculoRacaoTest {
 
     }
 
-    @Order(10)
+    @Order(12)
     @ParameterizedTest
     @CsvSource(value = {
             "P,100.01",
@@ -111,8 +125,35 @@ public class CalculoRacaoTest {
 
     }
 
+    @Order(13)
+    @ParameterizedTest
+    @CsvSource(value = {
+            "O,5",
+            "H,20",
+            "N,50"
+    }, delimiter = ',')
+    public void testeNegativoPorteNaoSuportadoLista(String porte, double peso){
+
+        assertEquals("Por favor digite um tamanho suportado: P, M ou G",
+                CalculadoraRacao.calcular_racao_cao(porte,peso));
+    }
+
+    @Order(14)
+    @ParameterizedTest
+    @CsvSource(value = {
+            "P,18",
+            "M,40",
+            "G,12"
+    }, delimiter = ',')
+    public void testeNegativoPorteNaoCorrespondeLista(String porte, double peso){
+
+        assertEquals("Peso não corresponde ao porte informado",
+                CalculadoraRacao.calcular_racao_cao(porte,peso));
+    }
+
+
     //Testes Positivos com CSV
-    @Order(11)
+    @Order(15)
     @ParameterizedTest
     @CsvFileSource(resources = "/csv/testePositivoPequeno.csv", numLinesToSkip = 1, delimiter = ',')
     public void testePositivoPortePequenoCsv(String porte, double peso){
@@ -124,7 +165,7 @@ public class CalculoRacaoTest {
         System.out.println(CalculadoraRacao.calcular_racao_cao(porte, peso));
     }
 
-    @Order(12)
+    @Order(16)
     @ParameterizedTest
     @CsvFileSource(resources = "/csv/testePositivoMedio.csv", numLinesToSkip = 1, delimiter = ',')
     public void testePositivoPorteMedioCsv(String porte, double peso){
@@ -136,7 +177,7 @@ public class CalculoRacaoTest {
         System.out.println(CalculadoraRacao.calcular_racao_cao(porte, peso));
     }
 
-    @Order(13)
+    @Order(17)
     @ParameterizedTest
     @CsvFileSource(resources = "/csv/testePositivoGrande.csv", numLinesToSkip = 1, delimiter = ',')
     public void testePositivoPorteGrandeCsv(String porte, double peso){

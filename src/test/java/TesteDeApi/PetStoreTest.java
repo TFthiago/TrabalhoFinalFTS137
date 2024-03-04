@@ -81,7 +81,7 @@ public class PetStoreTest {
                 .statusCode(200)
                 .log().all()
                 .body("id", is(1))
-                .body("petId", is(48752135))
+                .body("petId", is(petId))
                 .body("status", is("approved"))
                 .extract();
         orderId = response.jsonPath().getInt("id");
@@ -118,6 +118,7 @@ public class PetStoreTest {
         .then()
                 .statusCode(200)
                 .log().all()
+                .body("name", is("Bichento"))
                 .body("status", is("sold"));
 
     }
@@ -134,6 +135,11 @@ public class PetStoreTest {
         .then()
                 .statusCode(200)
                 .log().all()
-                .body("id", is(1));
+                .body("id", is(1))
+                .body("petId", is(petId))
+                .body("status", is("approved"))
+                .body("complete", is(true))
+        ;
+
     }
 }

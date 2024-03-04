@@ -25,7 +25,7 @@ public class CalculadoraRacao {
                 return "Por favor digite um tamanho suportado: P, M ou G";
         }
 
-        // Se o peso não estiver de acordo com o porte esperado, retorna uma mensagem específica
+        // Se o peso não concorda com o porte esperado, retorna uma mensagem específica
         if (quantidadeRacao == 0) {
             return "Peso não corresponde ao porte informado";
         }
